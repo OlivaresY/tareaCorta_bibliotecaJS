@@ -19,17 +19,29 @@ class Biblioteca {
     }
 
     agregarLibro(libro) {
-        const existe = this.libros.find(l => l-titulo.toLowerCase() === libro.titulo.toLowerCase());
+        const existe = this.libros.find(l => l.titulo.toLowerCase() === libro.titulo.toLowerCase());
         if (existe) {
-            console.error(`El libro "${libro.titutlo}" ya existe en la biblioteca.`);
+            console.error(`El libro "${libro.titulo}" ya existe en la biblioteca.`);
         } else {
             this.libros.push(libro);
             console.log(`Libro "${libro.titulo}" agregado correctamente.`);
         }
     }
-}
 
-buscarPorGenero(genero) {
-    return this.libros.filter(l => l.genero.toLowerCase() === genero.toLowerCase());
-}
+    buscarPorGenero(genero) {
+        return this.libros.filter(l => l.genero.toLowerCase() === genero.toLowerCase());
+    }
 
+    prestar(titulo) {
+        const libro = this.libros.find(l => l.titulo.toLowerCase() === titulo.toLowerCase());
+        if (!libro) {
+            throw new Error(`El libro "${titulo}" no existe en la biblioteca.`);
+        }
+        if (!libro.disponible) {
+            console.log(`El libro "${titulo}" ya está prestado.`);
+        } else {
+            libro.disponible = false;
+            console.log(`Has prestado el libro "${titulo}".`);
+        }
+    }
+}
