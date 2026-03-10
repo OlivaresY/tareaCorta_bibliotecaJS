@@ -44,4 +44,12 @@ class Biblioteca {
             console.log(`Has prestado el libro "${titulo}".`);
         }
     }
+    estadisticas() {
+        const total = this.libros.length;
+        const disponibles = this.libros.filter(l => l.disponible).length;
+        const prestados = total - disponibles;
+        console.log(`Total de libros: ${total}`);
+        console.log(`Disponibles: ${disponibles}`);
+        console.log(`Prestados: ${prestados}`);
+    }
 }
