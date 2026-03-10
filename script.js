@@ -29,3 +29,7 @@ class Biblioteca {
     }
 }
 
+buscarPorGenero(genero) {
+    return this.libros.filter(l => l.genero.toLowerCase() === genero.toLowerCase());
+}
+
