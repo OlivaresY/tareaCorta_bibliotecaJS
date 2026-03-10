@@ -53,3 +53,31 @@ class Biblioteca {
         console.log(`Prestados: ${prestados}`);
     }
 }
+
+//datos de prueba
+const miBiblioteca = new Biblioteca("Mi Biblioteca");
+
+// Agregar libros
+miBiblioteca.agregarLibro(new Libro("Cien años de soledad", "García Márquez", "Ficción", 1967));
+miBiblioteca.agregarLibro(new Libro("El código Da Vinci", "Dan Brown", "Thriller", 2003));
+miBiblioteca.agregarLibro(new Libro("Breve historia del tiempo", "Stephen Hawking", "Ciencia", 1988));
+miBiblioteca.agregarLibro(new Libro("1984", "George Orwell", "Ficción", 1949));
+miBiblioteca.agregarLibro(new Libro("El Principito", "Antoine de Saint-Exupéry", "Ficción", 1943));
+
+// Intentar duplicado
+miBiblioteca.agregarLibro(new Libro("El código Da Vinci", "Dan Brown", "Thriller", 2003));
+
+// Prestar un libro
+try {
+  miBiblioteca.prestar("Cien años de soledad");
+  miBiblioteca.prestar("Cien años de soledad"); // ya prestado
+} catch (error) {
+  console.error("Error:", error.message);
+}
+
+// Buscar por género
+const ciencia = miBiblioteca.buscarPorGenero("ciencia");
+console.log("Libros de Ciencia:", ciencia.map(l => l.info()));
+
+// Estadísticas
+miBiblioteca.estadisticas();
