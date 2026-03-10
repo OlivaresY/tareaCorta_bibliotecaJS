@@ -7,8 +7,8 @@ class Libro {
         this.disponible = true;
     }
 
-    instanceof() {
-        //retorna: "[Titulo de [Autor] ([Año]) - Disponible / Prestado"
+    info() { //se define como se crea y como se muestra el libro
+        return `${this.titulo} de ${this.autor} (${this.anio}) - ${this.disponible ? "Disponible" : "Prestado"}`;
     }
 }
 
@@ -18,3 +18,4 @@ class Biblioteca {
         //liros -> arreglo vacio
     }
 }
+
