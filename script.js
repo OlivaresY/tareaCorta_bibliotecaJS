@@ -11,3 +11,11 @@ class Libro {
         //retorna: "[Titulo de [Autor] ([Año]) - Disponible / Prestado"
     }
 }
+
+class Biblioteca {
+    constructor(nombre) {
+        //Nombre -> string
+        //liros -> arreglo vacio
+    }
+}
+
