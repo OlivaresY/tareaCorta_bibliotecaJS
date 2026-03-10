@@ -75,9 +75,9 @@ try {
   console.error("Error:", error.message);
 }
 
-// Buscar por género
+// Buscar por genero
 const ciencia = miBiblioteca.buscarPorGenero("ciencia");
 console.log("Libros de Ciencia:", ciencia.map(l => l.info()));
 
-// Estadísticas
+// Estadisticas
 miBiblioteca.estadisticas();
