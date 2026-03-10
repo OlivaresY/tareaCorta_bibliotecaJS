@@ -1,10 +1,10 @@
 class Libro {
-    constructor(Titulo, autor, genero, anio) {
-        //Titulo -> String
-        //autor -> string
-        //genero -> string(ej: "Ficcion", #"Ciencia")
-        //anio -> number
-        //disponible -> boolean, inicia en true
+    constructor(titulo, autor, genero, anio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.anio = anio;
+        this.disponible = true;
     }
 
     instanceof() {
@@ -18,4 +18,3 @@ class Biblioteca {
         //liros -> arreglo vacio
     }
 }
-
